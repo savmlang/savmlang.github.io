@@ -17,6 +17,8 @@ concurrency:
 
 jobs:
   build:
+    name: Publish Astro Site
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,6 +26,8 @@ jobs:
 
       - name: Setup NodeJS
         uses: actions/setup-node@v6
+        with:
+          node-version: ">=24"
 
       - name: Setup bun
         run: curl -fsSL https://bun.sh/install | bash
@@ -42,6 +46,8 @@ jobs:
           path: dist
 
   deploy:
+    name: Deploy to GitHub Pages
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
