@@ -30,8 +30,8 @@ jobs:
 
       - name: Install deps & build
         run: |
-          bun install
-          bun run build
+          ~/.bun/bin install
+          ~/.bun/bin run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
