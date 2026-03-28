@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+:root {
+  --background: #09070c;
+  --bgsupp: #15041762;
+}
+
+:root::-webkit-scrollbar {
+  display: hidden;
+}
+
+:root::-webkit-scrollbar-track {
+  width: 0px;
+  display: hidden;
+}
+
+:root::-webkit-scrollbar-thumb {
+  display: hidden;
+}
+
 body {
-  @apply bg-[#0e0d0d];
+  background-image: radial-gradient(
+    circle at -10% -5%,
+    var(--bgsupp) 0%,
+    transparent 60%
+  );
+
+  @apply w-screen h-screen text-gray-200 bg-(--background) bg-fixed;
 }
