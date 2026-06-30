@@ -29,13 +29,13 @@ jobs:
         with:
           node-version: ">=24"
 
-      - name: Setup bun
-        run: curl -fsSL https://bun.sh/install | bash
+      - name: Setup pnpm
+        run: npm i -g pnpm
 
       - name: Install deps & build
         run: |
-          ~/.bun/bin/bun install
-          ~/.bun/bin/bun run build
+          pnpm install
+          pnpm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

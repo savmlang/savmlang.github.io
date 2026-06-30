@@ -1,4 +1,6 @@
 ---
+import Nav from "./nav.astro";
+
 // Import global styles
 import "../styles/global.css";
 ---
@@ -46,10 +48,18 @@ import "../styles/global.css";
       content="https://savmlang.github.io/banner.png"
     />
 
-    <title>Sa Foundation - Fast, Impressive, Deterministic</title>
+    <title>SaVM Foundation - Fast, Impressive, Deterministic</title>
   </head>
-  <body>
-    SaVM
-    <slot />
+
+  <body
+    class="w-screen h-screen flex flex-col overflow-x-hidden overflow-y-hidden"
+  >
+    <Nav />
+
+    <div
+      class="h-full w-auto md:mx-8 content overflow-y-scroll overflow-x-hidden scrollbar-none"
+    >
+      <slot />
+    </div>
   </body>
 </html>

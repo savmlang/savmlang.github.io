@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+* {
+  @apply duration-200 transition-transform;
+}
+
 :root {
-  --background: #09070c;
-  --bgsupp: #15041762;
+  --background: #12131a;
+  --bgsupp: #0a001162;
 }
 
 :root::-webkit-scrollbar {
@@ -20,10 +24,30 @@
 
 body {
   background-image: radial-gradient(
-    circle at -10% -5%,
+    circle at 50% -30%,
     var(--bgsupp) 0%,
-    transparent 60%
+    transparent 80%
   );
 
   @apply w-screen h-screen text-gray-200 bg-(--background) bg-fixed;
+}
+
+.content {
+  animation: load 300ms ease-in-out;
+}
+
+@keyframes load {
+  0% {
+    transform: translateY(3%);
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 40%;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
 }

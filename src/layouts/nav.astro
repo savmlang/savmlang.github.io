@@ -1,0 +1,18 @@
+---
+import Image from "astro/components/Image.astro";
+
+import logo from "../../public/savm/sabw.svg";
+---
+
+<nav
+  class="w-auto h-20 rounded-xl bg-gray-500/10 border-2 shadow-2xl border-gray-400/20 mx-2 md:mx-8 my-2 md:my-4 flex px-4 text-center items-center justify-center md:justify-start"
+>
+  <Image
+    src={logo}
+    alt="Sa Home"
+    height={32}
+    priority
+    class="cursor-pointer"
+    onclick='window.location.pathname = "/"'
+  />
+</nav>

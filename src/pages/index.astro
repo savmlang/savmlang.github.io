@@ -1,5 +1,41 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/sa.astro";
+
+import logo from "../../public/small.svg";
 ---
 
-<Layout />
+<Layout>
+  <div class="flex w-full h-auto flex-col lg:flex-row lg:space-x-4">
+    <div>
+      <Image
+        class="mt-16 mx-auto"
+        src={logo}
+        alt={"icon"}
+        width={128}
+        height={128}
+        priority
+      />
+
+      <h1
+        class="text-center mt-8 font-serif text-[2rem] sm:text-[3rem] space-y-0"
+      >
+        <i>UNCOMPLICATE</i>
+      </h1>
+      <h1 class="text-center font-mono text-[4rem]">
+        the <i><strong>VM</strong></i>
+      </h1>
+
+      <h2 class="text-center mt-2 sm:mt-8 text-gray-400 text-xl lg:w-[40ch]">
+        SaVM is a Virtual Machine focused on performance, determinism and
+        extensibility.
+      </h2>
+    </div>
+
+    <div class="h-auto w-full md:m-6 md:p-6 md:rounded-lg md:bg-black/30">
+      <span class="block mx-auto text-center md:hidden">----------------</span>
+
+      <h4 class="text-lg text-center">Benchmarks</h4>
+    </div>
+  </div>
+</Layout>
